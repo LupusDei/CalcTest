@@ -14,8 +14,21 @@
  */
 
 @interface JMMCalculatorViewController : UIViewController
+/// @name UI Elements
+/**
+ *  The main `UILabel` for displaying results and input.
+ */
 @property (weak, nonatomic) IBOutlet UILabel *displayLabel;
+
+/**
+ *  Container view with all of the `UIButtons`.
+ */
 @property (weak, nonatomic) IBOutlet UIView *buttonView;
+
+/// @name Public Properties
+/**
+ *  The running instance of `JMMCalculator` to do the heavy lifting.
+ */
 @property (nonatomic, strong) JMMCalculator *calculator;
 
 
