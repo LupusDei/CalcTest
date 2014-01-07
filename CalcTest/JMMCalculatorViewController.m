@@ -16,6 +16,7 @@
     BOOL operationJustPressed;
 }
 
+# pragma mark - UIViewController Methods
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -25,12 +26,16 @@
     return self;
 }
 
+/// @name Documented Private Methods
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setActionForButtons:[self.buttonView subviews]];
     self.calculator = [JMMCalculator new];
 }
+
+#pragma mark - Public Methods
 
 -(void) setActionForButtons:(NSArray *)buttons {
     for (UIButton *button in buttons) {
@@ -53,6 +58,8 @@
 		[self handleNumeralPressed:title];
     }
 }
+
+#pragma mark - Private Methods
 
 -(void) handleEquals {
     if (!operationJustPressed) {
