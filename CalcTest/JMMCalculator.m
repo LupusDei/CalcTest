@@ -9,8 +9,22 @@
 #import "JMMCalculator.h"
 
 @interface JMMCalculator()
+
+/// @name Private Properties
+/**
+ *  Array of operands. Used like a stack.
+ */
 @property (nonatomic, strong) NSMutableArray *operands;
+
+/**
+ * Storing the last operand to be used when pressing equals without pressing
+ * and Op `UIButton`
+ */
 @property (nonatomic, strong) NSNumber *lastOperand;
+
+/**
+ *  The current `JMMCalcOperation`
+ */
 @property JMMCalcOperation operation;
 @end
 
@@ -66,7 +80,13 @@
     }
     return [NSNumber numberWithFloat:result];
 }
+/// @name Private Methods
 
+/**
+ *  Pops last element from array, like a stack. Removes the element as well.
+ *
+ *  @return `NSNumber` with the last item in the opreands array.
+ */
 -(NSNumber *) popOperand {
     NSNumber *last = [self.operands lastObject];
     [self.operands removeLastObject];
