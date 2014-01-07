@@ -83,8 +83,8 @@
 }
 
 /**
- *  When `UIButton` tapped is an operand button, pass the operand to the [JMMCalculator captureOperand]
- *  and [JMMCalculator captureOperation] method. This operand will be used later for in the [JMMCalculator equate]
+ *  When `UIButton` tapped is an operand button, pass the operand to the [JMMCalculator captureOperand:]
+ *  and [JMMCalculator captureOperation:] method. This operand will be used later for in the [JMMCalculator equate]
  *  operation.
  *
  *  @param title Title of the operation that was tapped. Passed in from handleButtonWithTitlePressed:
